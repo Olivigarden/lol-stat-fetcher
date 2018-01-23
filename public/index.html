@@ -2,14 +2,13 @@
   <head>
     <title>Summoner Stat Search</title>
     <link rel="stylesheet" href="stylesheets\style.css" />
-    <script>type="text/javascript" src="javascripts\query.js"</script>
   </head>
   <body>
     <div class="container">
       <br />
-      <div class="searchBar">
-        <input id="txtName" class="form-control" placeholder="Enter a Summoner Name" type="text">
-        <select name="cmbRegion">
+      <form class="searchBar" method="post" action='/'>
+        <input name="Name" class="form-control" placeholder="Enter a Summoner Name" type="text">
+        <select name="Region">
           <option value="BR1">BR</option>
           <option value="EUN1">EUNE</option>
           <option value="EUW1">EUW</option>
@@ -23,8 +22,8 @@
           <option value="RU">RU</option>
           <option value="PBE1">PBE</option>
         </select>
-        <input id="btnSubmit" onclick="search()" class="form-control" value="Search" type="button">
-      </div>
+        <input id="btnSubmit" class="form-control" value="Search" type="submit">
+      </form>
 
       <div class="results">
       </div>
