@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+  <head>
+    <title>Summoner Stat Search</title>
+    <link rel="stylesheet" href="stylesheets\style.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script>
+        $(() => {
+            $("submit").click(() => {
+                var query = {
+                    name: $("#txtName").val(), region: $("#cmbRegion").val()
+                }
+                postQuery(query)
+            })
+        })
+        function postQuery(query){
+            $.post("http://localhost:3000", query);
+        }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <br />
+      <div class="searchBar">
+        <input id="txtName" class="form-control" placeholder="Enter a Summoner Name" type="text">
+        <select name="cmbRegion">
+          <option value="BR1">BR</option>
+          <option value="EUN1">EUNE</option>
+          <option value="EUW1">EUW</option>
+          <option value="JP1">JP</option>
+          <option value="KR">KR</option>
+          <option value="LA1">LAN</option>
+          <option value="LA2">LAS</option>
+          <option value="NA1">NA</option>
+          <option value="OC1">OCE</option>
+          <option value="TR1">TR</option>
+          <option value="RU">RU</option>
+          <option value="PBE1">PBE</option>
+        </select>
+        <input id="btnSubmit" class="form-control" text="Search" type="submit">
+      </div>
+
+      <div class="results">
+      </div>
+    </div>
+  </body>
+</html>
