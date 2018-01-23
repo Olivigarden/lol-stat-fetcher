@@ -2,20 +2,7 @@
   <head>
     <title>Summoner Stat Search</title>
     <link rel="stylesheet" href="stylesheets\style.css" />
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
-    <script>
-        $(() => {
-            $("submit").click(() => {
-                var query = {
-                    name: $("#txtName").val(), region: $("#cmbRegion").val()
-                }
-                postQuery(query)
-            })
-        })
-        function postQuery(query){
-            $.post("http://localhost:3000", query);
-        }
-    </script>
+    <script>type="text/javascript" src="javascripts\query.js"</script>
   </head>
   <body>
     <div class="container">
@@ -36,7 +23,7 @@
           <option value="RU">RU</option>
           <option value="PBE1">PBE</option>
         </select>
-        <input id="btnSubmit" class="form-control" text="Search" type="submit">
+        <input id="btnSubmit" onclick="search()" class="form-control" value="Search" type="button">
       </div>
 
       <div class="results">
