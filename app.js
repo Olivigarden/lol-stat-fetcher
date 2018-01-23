@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var query = require("./query");
+const query = require("./query");
 
 var app = express();
 

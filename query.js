@@ -1,6 +1,4 @@
-function search() {
-  var inputName = document.getElementById("txtName").value;
-  var inputRegion = document.getElementById("cmbRegion").value;
+function search(inputName, inputRegion) {
   const http = require("http");
 
   var request = "https://" + inputRegion.toLowerCase() + ".api.riotgames.com/lol/summoner/v3/summoners/by-name/" + inputName;
@@ -22,7 +20,7 @@ function search() {
     });
   }).end();
 
-  document.write("<p>" + data.toString() + "</p>");
+  console.log(data.toString());
 }
 
 // node --inspect main.js https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/RiotSchmick RGAPI-ad7693c0-a668-4529-9c95-6ab4a16f9fe3
